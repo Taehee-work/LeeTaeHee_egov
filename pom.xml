@@ -214,6 +214,50 @@
 			<artifactId>icu4j</artifactId>
 			<version>53.1</version>
 		</dependency>
+		
+		<!-- 커스터마이징용 추가(아래) -->
+		<!-- mybatis 사용/ 데이터를 가져오기를 하는 메소드(ex.자바 <-> Mysql) -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>3.2.8</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>1.2.2</version>
+		</dependency>
+		
+		<!-- JUnit 테스트 모듈 추가 -->
+		<!-- Test 참조 https://offbyone.tistory.com/155 -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>4.3.22.RELEASE</version>
+		 </dependency>
+		 <dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>4.3.22.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+			<version>1</version>
+		</dependency>
+		
 	</dependencies>
 
     <build>

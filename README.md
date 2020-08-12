@@ -1,4 +1,70 @@
 ## 전자정부 표준 프레임워크 커스터마이징
+***
+### 파스타 클라우드 활용(공통)
+1. 스프링프로젝트 LeeTaeHee-egov 변경(도메인의 호스트네임으로 사용)
+2. 이클립스에서  LeeTaeHee-egov 프로젝트를 파스타에 배포 (MySQL 용)
+3. LeeTaeHee-egov 프로젝트용 클라우드DB생성:서비스명은 egov-mysql-db
+4. 파스타 클라우드에서 egov-mysql-db의 원격 접속 이름과 암호를 확인
+5. 이미 생성된 phpmyadmin 어플리케이션명:LeeTaeHee-myadmin 실행
+6. https://LeeTaeHee-myadmin.paas-ta.org 접속후 전자정부 프로젝트용 더미데이터 인서트
+7. https://LeeTaeHee-egov.paas-ta.org 사이트에서 파스타 배포결과 확인
+***
+
+### 2020.08.12(수)작업내역(아래)
+1. 쿼리 생성: src/main.resources/egovframework/mapper/com/member/member_mysql.xml
+2. DAO클래스에서 insertMember, updateMember, deleteMember 메서드 생성
+3. Service 클래스에서 insertMember,updateMember,deleteMember 메서드 생성
+4. JUnit 테스트로 CRUD 확인
+
+
+###2020.08.11(화)작업내역(아래)
+- JUnit 테스터로 DAO의 selectMember 실행하기
+
+```
+1. 전자정부 프로젝트는 기본 JUnit이 없기 때문에, 테스트 환경을 만들어야함.. Pom.xml 모듈 추가하기
+2. src/test/java/~/TestMember.java 추가 / @ContextConfiguration 경로를 2개추가
+
+3. egov-com-servlet.xml 파일에서 component-scan 부분에서 제워된(exclude)를 -> 포함시킴(include)
+```
+
+-DAO(@Repository), Service(@Service) 만들기
+
+```
+1. service/impl/MemberDAO.java(추상클래스 사용, extends EgovAbstractDAO 필수)
+
+2. service/MemberService.java(인터페이스)
+
+3. service/impl/MemberServiceImpl.java(구현클래스)
+- @Resource 대신 @inject 사용
+```
+
+- 프로젝트에서 마이바티스 사용하기
+
+```
+1. maven Module 추가 ( pom.xml)
+<!-- MyBatis 사용/ 데이터를 가져오기를 하는 메소드(ex.자바 <-> Mysql) -->
+<dependency>
+	<groupId>org.mybatis</groupId>
+	<artifactId>mybatis</artifactId>
+	<version>3.2.8</version>
+</dependency>
+<dependency>
+	<groupId>org.mybatis</groupId>
+	<artifactId>mybatis-spring</artifactId>
+	<version>1.2.2</version>
+</dependency>
+
+2. 관리자관리에 사용되는 테이블 확인: emplyrinfo
+
+3. 관리자 관리 테이블과 get/set 하는 VO 만들기: EmployerInfoVO.java
+- 테이블 생성쿼리에서 필드명 복사VO 자바파일에서 사용, 특이사항, 대->소문자 변환( Ctrl + shift + y 단축키 사용 )
+
+4. Spring - MyBatis 설정파일 추가: context-mapper.xml
+- configLocation: MyBatis 설정 파일 위치 mapper-config.xml 추가
+- mapperLocation: 쿼리가 존재하는 폴더 위치  member_mysql.xml 추가(쿼리)
+```
+
+
 ### 2020.08.10(월) 작업내역(아래)
 ***
 ### 파스타 클라우드 활용
