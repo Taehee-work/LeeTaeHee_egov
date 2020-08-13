@@ -31,12 +31,12 @@
 			#{EMAIL_ADRES},
 			#{GROUP_ID},
 			#{ORGNZT_ID},
-			#{EMPLYR_STTUS}
+			#{EMPLYR_STTUS_CODE}
 		)
 	</insert>
 	
 	<update id="updateMember">
-		UPDATE lettnemplyrinfo 
+		UPDATE lettnemplyrinfo
 		SET 
 		    ESNTL_ID = #{ESNTL_ID},
 		    PASSWORD = #{PASSWORD},
@@ -48,7 +48,7 @@
 		    EMAIL_ADRES = #{EMAIL_ADRES},
 		    GROUP_ID = #{GROUP_ID},
 		    ORGNZT_ID = #{ORGNZT_ID},
-		    EMPLYR_STTUS_CODE = #{EMPLYR_STTUS}
+		    EMPLYR_STTUS_CODE = #{EMPLYR_STTUS_CODE}
 		WHERE
 		    EMPLYR_ID = #{EMPLYR_ID}
 	</update>
@@ -56,4 +56,7 @@
 	<delete id="deleteMember">
 		delete from lettnemplyrinfo where EMPLYR_ID = #{EMPLYR_ID} 
 	</delete>
+	<select id="viewMember" resultType="edu.human.com.member.service.EmployerInfoVO">
+		select * from lettnemplyrinfo where EMPLYR_ID = #{EMPLYR_ID}
+	</select>
 </mapper>

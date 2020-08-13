@@ -10,6 +10,36 @@
 7. https://LeeTaeHee-egov.paas-ta.org 사이트에서 파스타 배포결과 확인
 ***
 
+### 2020.08.14(금) 작업내역(아래)
+1. 컨트롤러에 memberList 페이지 경로추가(아래)
+	- edu.human.com.member.web(컨트롤러용 패키지)
+	- MemberController.java @Controller 클래스 생성
+	- com/member/selectMember.do
+
+```
+/** 
+* 관리자 목록을 조회한다.
+*/
+@RequestMapping("/com/member/selectMember.do)
+public List<EmployerInfoVO> selectMember(Model model) throws Exception{
+	model.addAttribute("resultList",멤버서비스호출);
+	return "com/member/list";
+}
+```
+2. memberView 페이지, update 페이지, insert 페이지 생성
+3. 로컬 PC에서 결과 확인 후, 파스타에 배포예정
+
+
+### 2020.08.13(목) 작업내역(아래)
+1. viewMember 쿼리 + DAO + Service 메서드 추가후 JUnit테스트 OK
+2. jsp폴더(view폴더)에 inc/EgovIncleftment.jsp 파일수정
+
+```
+메뉴내용 추가(아래)
+<li class="dept02">
+<a href="javascript:fn_main_headPageAction('57','com/member/selectMember.do')">관리자관리</a></li>
+```
+
 ### 2020.08.12(수)작업내역(아래)
 1. 쿼리 생성: src/main.resources/egovframework/mapper/com/member/member_mysql.xml
 2. DAO클래스에서 insertMember, updateMember, deleteMember 메서드 생성
