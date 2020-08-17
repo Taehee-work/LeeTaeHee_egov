@@ -10,7 +10,17 @@
 7. https://LeeTaeHee-egov.paas-ta.org 사이트에서 파스타 배포결과 확인
 ***
 
+### 2020.08.17(월) 작업내역(아래)
+1. 관리자관리 기능 CRUD 작업 마무리
+2. 관리자 등록시 아이디 중복체크(RestAPI 사용) 기능 추가
+3. 전자정부 프로젝트*(관리자관리기능 추가한것) 파스타에 배포
+
 ### 2020.08.14(금) 작업내역(아래)
+
+0. 관리자관리 경로 com/member/selectMember.do 로그인체크 추가
+	로그인 체크 관련 파일 : egov-com-servlet.xml(서블렛파일) 인터셉터 관리
+	뷰리졸버(viewresolver): 뷰단(jsp)단 해석기계(웹 페이지 루트, 확장자 지정)
+	
 1. 컨트롤러에 memberList 페이지 경로추가(아래)
 	- edu.human.com.member.web(컨트롤러용 패키지)
 	- MemberController.java @Controller 클래스 생성
@@ -20,13 +30,27 @@
 /** 
 * 관리자 목록을 조회한다.
 */
-@RequestMapping("/com/member/selectMember.do)
+@RequestMapping("/com/member/selectMember.do")
 public List<EmployerInfoVO> selectMember(Model model) throws Exception{
 	model.addAttribute("resultList",멤버서비스호출);
 	return "com/member/list";
 }
 ```
-2. memberView 페이지, update 페이지, insert 페이지 생성
+2. member View 페이지, update 페이지, insert 페이지 생성
+
+```
+- 우리가 기존에 작업한 스프링 프로젝트에서 
+/*
+	<form id="폼이름" name="폼이름">
+	</form>
+*/
+
+- 전자정부 프로젝트에서는 
+/*
+	<form:form commandName="폼이름"  name="폼이름">
+	</form:form>
+*/
+```
 3. 로컬 PC에서 결과 확인 후, 파스타에 배포예정
 
 
