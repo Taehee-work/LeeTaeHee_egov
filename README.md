@@ -10,6 +10,18 @@
 7. https://LeeTaeHee-egov.paas-ta.org 사이트에서 파스타 배포결과 확인
 ***
 
+### 2020.08.19(수) 작업내역(아래)
+1. DB인터페이스 확인 - 실행가능한 소스 https://github.com/miniplugin/Dbinterface_ora_ok.git
+	(오라클 insert 후 커밋, -System.out.print(vo.toString())- )
+2. 타일즈 템플릿(UI족-레이아웃 정리) 라이브러리 사용/전자정부프로젝트에 적용
+3. 클라우드 파스타 mysql서비스 제거 후, 생성(name-egov-db 서비스 이름)
+4. 클라우드 파스타 앱 제거 후, 이클립스 PUSH(name-egovadmin관리용 php앱 이름)
+
+### 2020.08.18(화) 작업내역
+1. 관리자 등록시 아이디 중복체크(RestAPI사용) 마무리
+	- RestAPI 사용은 이클립스 내장 브라우저에서는 않되기 때문에, 크롬에서 사용
+2. 서버 프로그램 시험준비 후 3교시부터 시험
+
 ### 2020.08.17(월) 작업내역(아래)
 1. 관리자관리 기능 CRUD 작업 마무리
 2. 관리자 등록시 아이디 중복체크(RestAPI 사용) 기능 추가

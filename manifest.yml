@@ -1,0 +1,10 @@
+---
+applications:
+- name: LeeTaeHee-egov
+  memory: 1024M
+  disk_quota: 1024M
+  instances: 1
+  host: leetaehee-egov
+  domain: paas-ta.org
+  services:
+  - LeeTaeHee-egov-db
