@@ -10,6 +10,12 @@
 7. https://LeeTaeHee-egov.paas-ta.org 사이트에서 파스타 배포결과 확인
 ***
 
+###2020.08.20(목-와요일~) 작업내역(아래)
+1. 9월 중순 아두이노 작업시 스케치 프로그램(언어) 사용하기 전, C언어 미리보기
+	구름IDE(온라인)으로 실습
+2. 전자정부 프로젝트(스프링)를 리뉴얼(AdminLTE 디자인 관리자단)작업
+3. 진도에 맞춰서 수업진행
+
 ### 2020.08.19(수) 작업내역(아래)
 1. DB인터페이스 확인 - 실행가능한 소스 https://github.com/miniplugin/Dbinterface_ora_ok.git
 	(오라클 insert 후 커밋, -System.out.print(vo.toString())- )

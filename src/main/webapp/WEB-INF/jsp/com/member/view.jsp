@@ -98,7 +98,7 @@
 							</tr>
 							<tr> 
 								<th width="20%" height="23" class="required_text" nowrap >
-								휴면계정</th>
+								휴면계정여부</th>
 								<td width="80%" nowrap="nowrap">
 									<c:out value="${memberVO.EMPLYR_STTUS_CODE}"></c:out>				        					   
 								</td>
