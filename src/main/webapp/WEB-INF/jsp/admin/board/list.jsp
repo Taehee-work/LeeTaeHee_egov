@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://egovframework.gov/ctl/ui" prefix="ui" %>
 <%@ include file="../include/header.jsp" %>
 
 <!-- Content Wrapper. Contains page content -->
@@ -53,8 +54,7 @@
 					<button>검색</button>
 				</div>
 				<div class="button" style="display: inline">
-					<a href="<c:url value='/cop/bbs${prefix}/addBoardArticle.do'/>?bbsId=<c:out value="${boardVO.bbsId}"/>">등록</a>
-					<button>새글쓰기</button>
+					<button type="button" onclick='location.href="<c:url value='/admin/board${prefix}/insertBoard.do'/>?bbsId=<c:out value="${boardVO.bbsId}"/>"'>새글쓰기</button>
 				</div>
 			</div>
 		</form>
@@ -120,13 +120,21 @@
 					<table class="table table-hover text-nowrap">
 					<tr>
 					<td>
-						<button type="submit" class="btn btn-primary">CREATE</button>
+						<button type="button" class="btn btn-primary" onclick='location.href="<c:url value='/'/>admin/member/insertMember.do"'>CREATE</button>
 					</td>
 					<td>
+					 <style>
+					 	.active .page-link{
+					 		z-index:3;
+					 		color:#fff;
+					 		background-color:#007bff;
+					 		board-color:#007bff;
+					 	}
+					 </style>
 						<nav aria-label="Contacts Page Navigation">
 							<ul class="pagination justify-content-center m-0">
-								<li class="page-item active"><a class="page-link"
-									href="#">1</a></li>
+								<!-- <li class="page-item active"><a class="page-link" href="#">1</a></li> -->
+								<ui:pagination paginationInfo="${paginationInfo}" type="image" jsFunction="fn_egov_select_noticeList" />
 							</ul>
 						</nav>
 					</td>
