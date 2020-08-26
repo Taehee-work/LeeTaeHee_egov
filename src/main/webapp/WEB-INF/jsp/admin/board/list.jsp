@@ -120,7 +120,7 @@
 					<table class="table table-hover text-nowrap">
 					<tr>
 					<td>
-						<button type="button" class="btn btn-primary" onclick='location.href="<c:url value='/'/>admin/member/insertMember.do"'>CREATE</button>
+						<button type="button" onclick='location.href="<c:url value='/admin/board${prefix}/insertBoard.do'/>?bbsId=<c:out value="${boardVO.bbsId}"/>"' class="btn btn-primary">CREATE</button>
 					</td>
 					<td>
 					 <style>

@@ -92,7 +92,7 @@
 						</c:forEach>
 					</tbody>
 					<td>
-						<button type="button" class="btn btn-primary">CREATE</button>
+						<button type="button" onclick='location.href="<c:url value='/'/>admin/member/insertMember.do"' class="btn btn-primary">CREATE</button>
 					</td>
 					<td>
 						<nav aria-label="Contacts Page Navigation">

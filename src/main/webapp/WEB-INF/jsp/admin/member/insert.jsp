@@ -91,13 +91,13 @@
 							<div class="col-sm-12">
 								<div class="form-group">
 									<label>소속기관</label>
-									<input type="text" class="form-control" name="ORGNZT_ID" value="${memberVO.ORGNZT_ID}">
+									<input type="text" class="form-control" name="ORGNZT_ID" value="ORGNZT_0000000000000">
 								</div>
 							</div>
 							<div class="col-sm-12">
 								<div class="form-group">
 									<label>휴면계정여부</label>
-									<input type="text" class="form-control"	name="EMPLYR_STTUS_CODE" value="${memberVO.EMPLYR_STTUS_CODE}">
+									<input type="text" class="form-control"	name="EMPLYR_STTUS_CODE" value="P">
 								</div>
 							</div>
 							
